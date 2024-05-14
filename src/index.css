@@ -22,9 +22,7 @@
 
 @font-face {
     font-family: 'pjs';
-    src: url('/fonts/PJS/PlusJakartaSans-Variable.woff2') format('woff2'),
-        url('/fonts/PJS/PlusJakartaSans-Variable.woff') format('woff'),
-        url('/fonts/PJS/PlusJakartaSans-Variable.ttf') format('truetype');
+    src: url('./assets/fonts/pjs/PlusJakartaSans-Variable.woff2') format('woff2');
     font-weight: 200 800;
     font-display: swap;
     font-style: normal;
