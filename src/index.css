@@ -3,22 +3,12 @@
 @tailwind utilities;
 
 :root {
-    --clr-border: #CED4DA;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    --primary-font: 'pjs';
 }
-/* .cuBox {
-    background-image: 
-        linear-gradient(to right, var(--clr-border) 50%, transparent 50%),
-        linear-gradient(to right, var(--clr-border) 50%, transparent 50%),
-        linear-gradient(to bottom, var(--clr-border) 50%, transparent 50%),
-        linear-gradient(to bottom, var(--clr-border) 50%, transparent 50%);
-    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
-    background-size: 25px 1.2px, 25px 1.2px, 1.2px 25px, 1.2px 25px;
-    background-position: top, bottom, left, right;
-} */
 
 @layer utilities {
     .cuBox {
@@ -28,4 +18,18 @@
 
 .no-cancel-button::-webkit-search-cancel-button {
     -webkit-appearance: none;
+}
+
+@font-face {
+    font-family: 'pjs';
+    src: url('/fonts/PJS/PlusJakartaSans-Variable.woff2') format('woff2'),
+        url('/fonts/PJS/PlusJakartaSans-Variable.woff') format('woff'),
+        url('/fonts/PJS/PlusJakartaSans-Variable.ttf') format('truetype');
+    font-weight: 200 800;
+    font-display: swap;
+    font-style: normal;
+}
+
+.primary-font {
+    font-family: var(--primary-font);
 }

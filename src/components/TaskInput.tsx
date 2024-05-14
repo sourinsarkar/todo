@@ -14,9 +14,20 @@ function TaskInput() {
     }
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === 'Enter') {
+      handleAddTodo();
+    }
+};
+  
   return (
     <div className="flex items-center h-20 max-h-20 cuBox px-6 mt-5">
-      <input value={input} className="class="text-xl font-medium primary-font placeholder:text-textColor-gray1 w-full outline-none no-cancel-button" placeholder="Add new task" onChange={(e) => setInput(e.target.value)} />
+      <input
+      value={input}
+      className="text-xl font-medium primary-font placeholder:text-textColor-gray1 w-full outline-none no-cancel-button" placeholder="Add new task"
+      onChange={(e) => setInput(e.target.value)}
+      onKeyDown={handleKeyDown}
+      />
       <button onClick={handleAddTodo} className="p-2 bg-[#E9ECEF] rounded-lg">
         <PlusIcon className="w-6 h-6" />
       </button>
