@@ -1,24 +1,33 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-const todoSlice = createSlice({
+interface Todo {
+  id: number;
+  title: string;
+  completed: boolean;
+}
+
+const initialState: Todo[] = JSON.parse(localStorage.getItem('todos') ?? '[]');
+
+const crudSlice = createSlice({
   name: 'todos',
-  initialState: JSON.parse(localStorage.getItem('todos') ?? '') || [],
+  initialState,
   reducers: {
-    addTodo: (state, action) => {
+    addTodo: (state, action: PayloadAction<string>) => {
       state.push({ id: Date.now(), title: action.payload, completed: false });
-      localStorage.setItem('todos', JSON.stringify(state));
     },
-    toggleComplete: (state, action) => {
-      const index = state.findIndex((todo: any) => todo.id === action.payload);
+    toggleComplete: (state, action: PayloadAction<number>) => {
+      const index = state.findIndex((todo) => todo.id === action.payload);
       state[index].completed = !state[index].completed;
-      localStorage.setItem('todos', JSON.stringify(state));
     },
-    deleteTodo: (state, action) => {
-      return state.filter((todo: any) => todo.id !== action.payload);
+    deleteTodo: (state, action: PayloadAction<number>) => {
+      const index = state.findIndex((todo) => todo.id === action.payload);
+      if (index !== -1) {
+        state.splice(index, 1);
+      }
     },
   },
 });
 
-export const { addTodo, toggleComplete, deleteTodo } = todoSlice.actions;
+export const { addTodo, toggleComplete, deleteTodo } = crudSlice.actions;
 
-export default todoSlice.reducer;
+export default crudSlice.reducer;
