@@ -5,7 +5,7 @@ import TaskList from './components/TaskList';
 
 function App() {
   return(
-    <div className="m-auto max-w-lg px-6">
+    <div className="m-auto max-w-xl px-6">
       <Nav />
       <TaskInput />
       <TaskList />
