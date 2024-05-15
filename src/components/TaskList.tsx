@@ -29,7 +29,7 @@ function TaskList() {
             </p>
 
             <div className="flex items-center gap-x-2">
-              <button onClick={() => dispatch(toggleComplete(todo.id))} className="p-2 bg-[#E9ECEF] rounded-lg text-base">
+              <button onClick={() => dispatch(toggleComplete(todo.id))} className="p-2 bg-[#E9ECEF] rounded-lg text-sm md:text-base">
                 {todo.completed ? "Completed" : "Mark as completed"}
               </button>
               
