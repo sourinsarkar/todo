@@ -31,7 +31,6 @@ function TaskInput() {
       onKeyDown={handleKeyDown}
       />
 
-      // Here I have added the button to add the task
       <button onClick={handleAddTodo} className="p-2 bg-[#E9ECEF] rounded-lg">
         <PlusIcon className="w-6 h-6" />
       </button>
