@@ -20,18 +20,17 @@ function TaskList() {
   return (
     <ul>
       {todos.map((todo: Todo) => (
+        // (Bonus work) Here the code to toggle the task as completed and delete the task
         <li key={todo.id} className="cuBox flex items-center justify-between h-20 max-h-20 cuBox px-6 mt-5 text-xl font-medium primary-font">
           <p>
             {todo.title}
           </p>
 
-          // (Bonus work) Here the code to toggle the task as completed and delete the task
           <div className="flex items-center gap-x-2">
             <button onClick={() => dispatch(toggleComplete(todo.id))} className="p-2 bg-[#E9ECEF] rounded-lg text-base">
               {todo.completed ? "Completed" : "Mark as completed"}
             </button>
-
-            // Delete button
+            
             <button onClick={() => dispatch(deleteTodo(todo.id))} className="p-2 bg-[#E9ECEF] rounded-lg">
               <TrashIcon className="w-6 h-6" />
             </button>
