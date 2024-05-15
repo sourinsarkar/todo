@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, Middleware } from '@reduxjs/toolkit';
 
 interface Todo {
   id: number;
@@ -29,5 +29,11 @@ const crudSlice = createSlice({
 });
 
 export const { addTodo, toggleComplete, deleteTodo } = crudSlice.actions;
+
+export const localStorageMiddleware: Middleware = ({ getState }) => next => action => {
+  const result = next(action);
+  localStorage.setItem('todos', JSON.stringify(getState().todos));
+  return result;
+};
 
 export default crudSlice.reducer;
