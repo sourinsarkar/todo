@@ -23,6 +23,9 @@ importers:
       react-redux:
         specifier: ^9.1.2
         version: 9.1.2(@types/react@18.3.2)(react@18.3.1)(redux@5.0.1)
+      remixicon:
+        specifier: ^4.2.0
+        version: 4.2.0
     devDependencies:
       '@types/react':
         specifier: ^18.2.66
@@ -1229,6 +1232,9 @@ packages:
 
   redux@5.0.1:
     resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
+
+  remixicon@4.2.0:
+    resolution: {integrity: sha512-MF5wApNveRh3n0iMVM+lr2nSWrj/rBbSD2eWapuD9ReYRGs5naAUR1BqVBCHGqm286FIS6zwwmUf96QjHQ9l4w==}
 
   reselect@5.1.0:
     resolution: {integrity: sha512-aw7jcGLDpSgNDyWBQLv2cedml85qd95/iszJjN988zX1t7AVRJi19d9kto5+W7oCfQ94gyo40dVbT6g2k4/kXg==}
@@ -2561,6 +2567,8 @@ snapshots:
       redux: 5.0.1
 
   redux@5.0.1: {}
+
+  remixicon@4.2.0: {}
 
   reselect@5.1.0: {}
 

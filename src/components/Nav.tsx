@@ -1,12 +1,13 @@
-import { Bars2Icon } from "@heroicons/react/24/outline";
 import sourinmark from "../assets/images/sourinmark.svg"
 
 function Nav() {
     return(
         <div className="flex items-center justify-between h-20 max-h-20 cuBox px-6 mt-10">
-            <img src={sourinmark} alt="Sourin Icon" className="w-6 h-6" />
-            <div className="px-3 py-1 bg-[#E9ECEF] rounded-full">
-                <Bars2Icon className="w-6 h-6" />
+            <a href="https://sourin.in">
+                <img src={sourinmark} alt="Sourin Icon" className="w-6 h-6" />
+            </a>
+            <div className="p-2 bg-[#E9ECEF] rounded-full">
+                <a href="https://github.com/sourinsarkar/todo" target="_blank"><i className="ri-github-fill ri-xl"></i></a>
             </div>
         </div>
     );

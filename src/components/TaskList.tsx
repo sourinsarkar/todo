@@ -25,7 +25,9 @@ function TaskList() {
             {todo.title}
           </p>
           <div className="flex items-center gap-x-2">
-            <button onClick={() => dispatch(toggleComplete(todo.id))} className="p-2 bg-[#E9ECEF] rounded-lg text-base">Mark as completed</button>
+            <button onClick={() => dispatch(toggleComplete(todo.id))} className="p-2 bg-[#E9ECEF] rounded-lg text-base">
+              {todo.completed ? "Completed" : "Mark as completed"}
+            </button>
             <button onClick={() => dispatch(deleteTodo(todo.id))} className="p-2 bg-[#E9ECEF] rounded-lg">
               <TrashIcon className="w-6 h-6" />
             </button>
