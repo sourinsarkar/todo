@@ -24,10 +24,14 @@ function TaskList() {
           <p>
             {todo.title}
           </p>
+
+          // (Bonus work) Here the code to toggle the task as completed and delete the task
           <div className="flex items-center gap-x-2">
             <button onClick={() => dispatch(toggleComplete(todo.id))} className="p-2 bg-[#E9ECEF] rounded-lg text-base">
               {todo.completed ? "Completed" : "Mark as completed"}
             </button>
+
+            // Delete button
             <button onClick={() => dispatch(deleteTodo(todo.id))} className="p-2 bg-[#E9ECEF] rounded-lg">
               <TrashIcon className="w-6 h-6" />
             </button>

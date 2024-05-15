@@ -6,6 +6,9 @@ interface Todo {
   completed: boolean;
 }
 
+// Here the system reads the todos from the local storage. I was getting type error while
+// using locaStorage here. So instead of using localStorage directly, I used JSON.parse
+// And checked if the todos are present in the local storage or not.
 const initialState: Todo[] = JSON.parse(localStorage.getItem('todos') ?? '[]');
 
 const crudSlice = createSlice({
@@ -30,6 +33,9 @@ const crudSlice = createSlice({
 
 export const { addTodo, toggleComplete, deleteTodo } = crudSlice.actions;
 
+// Here the system saves the todos to the local storage.
+// I was getting type error while using locaStorage here. So instead of using localStorage directly,
+// I used JSON.stringify to convert the todos to string and saved it to the local storage.
 export const localStorageMiddleware: Middleware = ({ getState }) => next => action => {
   const result = next(action);
   localStorage.setItem('todos', JSON.stringify(getState().todos));

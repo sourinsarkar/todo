@@ -4,6 +4,7 @@ import { addTodo } from "../slices/crud/crudSlice";
 import { PlusIcon } from "@heroicons/react/24/outline";
 
 function TaskInput() {
+  // Here I have added the input state
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
 
@@ -14,6 +15,7 @@ function TaskInput() {
     }
   };
 
+  // Figured out that onKeyPress is deprecated and thus used onKeyDown
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === 'Enter') {
       handleAddTodo();
@@ -28,6 +30,8 @@ function TaskInput() {
       onChange={(e) => setInput(e.target.value)}
       onKeyDown={handleKeyDown}
       />
+
+      // Here I have added the button to add the task
       <button onClick={handleAddTodo} className="p-2 bg-[#E9ECEF] rounded-lg">
         <PlusIcon className="w-6 h-6" />
       </button>
